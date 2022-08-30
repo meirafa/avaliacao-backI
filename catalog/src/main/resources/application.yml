@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: catalog
+  config:
+    import: optional:configserver:http://localhost:8888/
+  cloud:
+    config:
+      profile: ${profile:dev}
+
+ #Banco de dados MySQL
+  datasource:
+    username: root
+    password: antonio007
+    url: jdbc:mysql://localhost:3306/microcatalog
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
